@@ -1,6 +1,6 @@
 # nautilus-file-convert
 
-Ubuntu 26.04 LTS-targeted file conversion for GNOME Files/Nautilus. The project is intentionally split into a standalone conversion CLI and a thin Nautilus extension so the engine can be rewritten later without changing the file-manager integration contract.
+Ubuntu 26.04 LTS-targeted file conversion for GNOME Files/Nautilus.
 
 ## Installation
 
@@ -18,7 +18,6 @@ Then reopen Files and right-click a supported file. The menu appears as `File Co
 - Linux-native TOML presets.
 - Media conversions through `ffmpeg`.
 - Image and PDF-oriented conversions through ImageMagick/Ghostscript.
-- No settings GUI yet.
 - Office document conversion is intentionally deferred.
 
 ## Development
