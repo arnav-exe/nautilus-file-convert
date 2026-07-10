@@ -34,6 +34,26 @@ Dry-run a conversion command without touching files:
 
 ## Nautilus Extension Development
 
-During development, symlink `nautilus/file_converter_nautilus.py` into `~/.local/share/nautilus-python/extensions/`, ensure `nautilus-file-convert` is on `PATH`, rebuild the menu cache, then restart Nautilus with `nautilus -q`.
+Install Nautilus Python support once:
+
+```bash
+sudo apt install python3-nautilus
+```
+
+Install the development context-menu integration:
+
+```bash
+./scripts/install-nautilus-dev.sh
+nautilus -q
+```
+
+The installer creates `~/.local/bin/nautilus-file-convert`, symlinks `nautilus/file_converter_nautilus.py` into `~/.local/share/nautilus-python/extensions/`, installs the package editable in the repo venv, and rebuilds the menu cache.
+
+To remove the development integration:
+
+```bash
+./scripts/uninstall-nautilus-dev.sh
+nautilus -q
+```
 
 The extension must stay lightweight: it reads only `~/.cache/nautilus-file-convert/menu-cache.json`, filters presets by extension, and spawns the CLI detached from Nautilus.
