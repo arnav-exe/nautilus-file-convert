@@ -2,6 +2,18 @@
 
 Ubuntu 26.04 LTS-targeted file conversion for GNOME Files/Nautilus. The project is intentionally split into a standalone conversion CLI and a thin Nautilus extension so the engine can be rewritten later without changing the file-manager integration contract.
 
+## Installation
+
+Current development install from a cloned repo:
+
+```bash
+sudo apt install python3-nautilus ffmpeg imagemagick ghostscript
+./scripts/install-nautilus-dev.sh
+nautilus -q
+```
+
+Then reopen Files and right-click a supported file. The menu appears as `File Converter` with conversions listed directly inside it.
+
 ## Current Scope
 
 - Nautilus/GNOME context-menu integration only.
@@ -39,8 +51,6 @@ Install Nautilus Python support once:
 ```bash
 sudo apt install python3-nautilus
 ```
-
-Run that apt command by itself; it installs Nautilus' Python extension loader.
 
 Install the development context-menu integration:
 
