@@ -34,26 +34,13 @@ class FileConvertMenuProvider(GObject.GObject, Nautilus.MenuProvider):
         submenu = Nautilus.Menu()
         root.set_submenu(submenu)
 
-        categories = {}
-        for preset in presets:
-            categories.setdefault(preset.get("category", "Other"), []).append(preset)
-
-        for category, category_presets in sorted(categories.items()):
-            category_item = Nautilus.MenuItem(
-                name=f"{APP_NAME}::Category::{category}",
-                label=category,
+        for preset in sorted(presets, key=lambda item: item["name"]):
+            item = Nautilus.MenuItem(
+                name=f"{APP_NAME}::Preset::{preset['id']}",
+                label=preset["name"],
             )
-            category_menu = Nautilus.Menu()
-            category_item.set_submenu(category_menu)
-            submenu.append_item(category_item)
-
-            for preset in category_presets:
-                item = Nautilus.MenuItem(
-                    name=f"{APP_NAME}::Preset::{preset['id']}",
-                    label=preset["name"],
-                )
-                item.connect("activate", _run_conversion, preset["id"], paths)
-                category_menu.append_item(item)
+            item.connect("activate", _run_conversion, preset["id"], paths)
+            submenu.append_item(item)
 
         return [root]
 
