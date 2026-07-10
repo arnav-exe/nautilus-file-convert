@@ -66,3 +66,9 @@ nautilus -q
 ```
 
 The extension must stay lightweight: it reads only `~/.cache/nautilus-file-convert/menu-cache.json`, filters presets by extension, and spawns the CLI detached from Nautilus.
+
+
+---
+
+
+Inspired by [FileConverter](https://github.com/Tichau/FileConverter)
