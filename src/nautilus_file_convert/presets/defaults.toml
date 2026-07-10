@@ -1,0 +1,80 @@
+[[preset]]
+id = "to-mp4"
+name = "To MP4"
+category = "Video"
+backend = "ffmpeg"
+output_extension = "mp4"
+input_extensions = ["3gp", "3gpp", "avi", "bik", "flv", "gif", "m4v", "mkv", "mov", "mp4", "mpeg", "mpg", "ogv", "rm", "ts", "webm", "wmv"]
+args = ["-c:v", "libx264", "-preset", "medium", "-crf", "23", "-c:a", "aac", "-b:a", "160k"]
+
+[[preset]]
+id = "to-mkv"
+name = "To MKV"
+category = "Video"
+backend = "ffmpeg"
+output_extension = "mkv"
+input_extensions = ["3gp", "3gpp", "avi", "bik", "flv", "gif", "m4v", "mkv", "mov", "mp4", "mpeg", "mpg", "ogv", "rm", "ts", "webm", "wmv"]
+args = ["-c:v", "libx264", "-preset", "medium", "-crf", "23", "-c:a", "aac", "-b:a", "160k"]
+
+[[preset]]
+id = "to-webm"
+name = "To WebM"
+category = "Video"
+backend = "ffmpeg"
+output_extension = "webm"
+input_extensions = ["3gp", "3gpp", "avi", "bik", "flv", "gif", "m4v", "mkv", "mov", "mp4", "mpeg", "mpg", "ogv", "rm", "ts", "webm", "wmv"]
+args = ["-c:v", "libvpx-vp9", "-b:v", "0", "-crf", "32", "-c:a", "libopus", "-b:a", "128k"]
+
+[[preset]]
+id = "to-mp3"
+name = "To MP3"
+category = "Audio"
+backend = "ffmpeg"
+output_extension = "mp3"
+input_extensions = ["aac", "aif", "aiff", "ape", "avi", "flac", "m4a", "mkv", "mov", "mp3", "mp4", "ogg", "opus", "wav", "webm", "wma"]
+args = ["-vn", "-codec:a", "libmp3lame", "-qscale:a", "2"]
+
+[[preset]]
+id = "to-flac"
+name = "To FLAC"
+category = "Audio"
+backend = "ffmpeg"
+output_extension = "flac"
+input_extensions = ["aac", "aif", "aiff", "ape", "flac", "m4a", "mp3", "ogg", "opus", "wav", "wma"]
+args = ["-vn", "-codec:a", "flac", "-compression_level", "8"]
+
+[[preset]]
+id = "to-jpg"
+name = "To JPG"
+category = "Image"
+backend = "imagemagick"
+output_extension = "jpg"
+input_extensions = ["avif", "bmp", "gif", "heic", "jpeg", "jpg", "pdf", "png", "tif", "tiff", "webp"]
+args = ["-quality", "92"]
+
+[[preset]]
+id = "to-png"
+name = "To PNG"
+category = "Image"
+backend = "imagemagick"
+output_extension = "png"
+input_extensions = ["avif", "bmp", "gif", "heic", "jpeg", "jpg", "pdf", "png", "tif", "tiff", "webp"]
+args = []
+
+[[preset]]
+id = "to-webp"
+name = "To WebP"
+category = "Image"
+backend = "imagemagick"
+output_extension = "webp"
+input_extensions = ["avif", "bmp", "gif", "heic", "jpeg", "jpg", "pdf", "png", "tif", "tiff", "webp"]
+args = ["-quality", "85"]
+
+[[preset]]
+id = "to-pdf"
+name = "To PDF"
+category = "PDF"
+backend = "imagemagick"
+output_extension = "pdf"
+input_extensions = ["avif", "bmp", "gif", "heic", "jpeg", "jpg", "png", "tif", "tiff", "webp"]
+args = []
