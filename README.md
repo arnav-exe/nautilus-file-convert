@@ -40,6 +40,8 @@ Install Nautilus Python support once:
 sudo apt install python3-nautilus
 ```
 
+Run that apt command by itself; it installs Nautilus' Python extension loader.
+
 Install the development context-menu integration:
 
 ```bash

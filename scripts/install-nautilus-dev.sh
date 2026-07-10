@@ -14,6 +14,17 @@ if [[ ! -x "$python_bin" ]]; then
     exit 1
 fi
 
+if ! python3 - <<'PY' >/dev/null 2>&1
+import gi
+gi.require_version("Nautilus", "4.0")
+from gi.repository import Nautilus
+PY
+then
+    echo "Missing Nautilus Python bindings." >&2
+    echo "Install them first: sudo apt install python3-nautilus" >&2
+    exit 1
+fi
+
 mkdir -p "$bin_dir" "$extension_dir"
 
 cat > "$wrapper_path" <<EOF
