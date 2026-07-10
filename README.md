@@ -4,12 +4,10 @@ Ubuntu 26.04 LTS-targeted file conversion for GNOME Files/Nautilus. The project 
 
 ## Installation
 
-Current development install from a cloned repo:
-
 ```bash
 sudo apt install python3-nautilus ffmpeg imagemagick ghostscript
 ./scripts/install-nautilus-dev.sh
-nautilus -q
+nautilus -q  # restart nautilus
 ```
 
 Then reopen Files and right-click a supported file. The menu appears as `File Converter` with conversions listed directly inside it.
